@@ -1,0 +1,159 @@
+:root {
+  --icon-size-md: 2.1875rem; /* 35px */
+  --icon-size-sm: 0.875rem; /* 14px */
+}
+
+.icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.icon-sm {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.placeholder {
+  content: url("../assets/icons/placeholder.png");
+}
+.btn-1 {
+  content: url("../assets/icons/btn-1.png");
+}
+.btn-2 {
+  content: url("../assets/icons/btn-2.png");
+}
+.btn-3 {
+  content: url("../assets/icons/btn-3.png");
+}
+.btn-4 {
+  content: url("../assets/icons/btn-4.png");
+}
+.btn-12 {
+  content: url("../assets/icons/btn-12.png");
+}
+.btn-23 {
+  content: url("../assets/icons/btn-23.png");
+}
+.btn-34 {
+  content: url("../assets/icons/btn-34.png");
+}
+.btn-14 {
+  content: url("../assets/icons/btn-41.png");
+}
+.btn-14 {
+  content: url("../assets/icons/btn-14.png");
+}
+.btn-23 {
+  content: url("../assets/icons/btn-23.png");
+}
+.btn-123 {
+  content: url("../assets/icons/btn-123.png");
+}
+.btn-234 {
+  content: url("../assets/icons/btn-234.png");
+}
+.btn-134 {
+  content: url("../assets/icons/btn-134.png");
+}
+.btn-124 {
+  content: url("../assets/icons/btn-124.png");
+}
+.btn-1234 {
+  content: url("../assets/icons/btn-1234.png");
+}
+.btn-ra {
+  content: url("../assets/icons/btn-ra.png");
+}
+.btn-hs {
+  content: url("../assets/icons/btn-hs.png");
+}
+.btn-ss {
+  content: url("../assets/icons/btn-ss.png");
+}
+.tap-n {
+  content: url("../assets/icons/tap-n.png");
+}
+.tap-f {
+  content: url("../assets/icons/tap-f.png");
+}
+.tap-df {
+  content: url("../assets/icons/tap-df.png");
+}
+.tap-d {
+  content: url("../assets/icons/tap-d.png");
+}
+.tap-db {
+  content: url("../assets/icons/tap-db.png");
+}
+.tap-b {
+  content: url("../assets/icons/tap-b.png");
+}
+.tap-ub {
+  content: url("../assets/icons/tap-ub.png");
+}
+.tap-u {
+  content: url("../assets/icons/tap-u.png");
+}
+.tap-uf {
+  content: url("../assets/icons/tap-uf.png");
+}
+.hold-n {
+  content: url("../assets/icons/hold-n.png");
+}
+.hold-f {
+  content: url("../assets/icons/hold-f.png");
+}
+.hold-df {
+  content: url("../assets/icons/hold-df.png");
+}
+.hold-d {
+  content: url("../assets/icons/hold-d.png");
+}
+.hold-db {
+  content: url("../assets/icons/hold-db.png");
+}
+.hold-b {
+  content: url("../assets/icons/hold-b.png");
+}
+.hold-ub {
+  content: url("../assets/icons/hold-ub.png");
+}
+.hold-u {
+  content: url("../assets/icons/hold-u.png");
+}
+.hold-uf {
+  content: url("../assets/icons/hold-uf.png");
+}
+.open {
+  content: url("../assets/icons/open.png");
+}
+.close {
+  content: url("../assets/icons/close.png");
+}
+.next {
+  content: url("../assets/icons/next.png");
+}
+.notes-on {
+  content: url("../assets/icons/notes-on.png");
+}
+.notes-off {
+  content: url("../assets/icons/notes-off.png");
+}
+.star-on {
+  content: url("../assets/icons/star-on.png");
+}
+.star-off {
+  content: url("../assets/icons/star-off.png");
+}
+.power-crush {
+  content: url("../assets/icons/power-crush.png");
+}
+.heat-engager {
+  content: url("../assets/icons/heat-engager.png");
+}
+.tornado-move {
+  content: url("../assets/icons/tornado-move.png");
+}
+.homing-attack {
+  content: url("../assets/icons/homing-attack.png");
+}
