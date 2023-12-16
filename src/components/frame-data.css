@@ -3,14 +3,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  width: 70px;
   height: 29px;
   text-align: center;
   color: #fff;
+  width: 32px;
 }
 
 .startup-container {
   background-color: #3d7623;
+  width: 70px;
 }
 
 .startup-container::before {
@@ -22,20 +23,8 @@
   background-color: #bc9014;
 }
 
-.on-counter-container::before {
-  content: "oC ";
-}
-
-.on-hit-container::before {
-  content: "oH ";
-}
-
 .on-block-container {
   background-color: #b05f0e;
-}
-
-.on-block-container::before {
-  content: "oB ";
 }
 
 /*

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import "./components/frame-data.css";
+@import "./components/icons.css";
 
 @tailwind base;
 @tailwind components;
@@ -15,35 +17,130 @@ body {
   font-size: 21px;
   font-weight: 400;
   height: 100vh;
-  background-color: rgb(14, 25, 35);
+  overflow: hidden;
+  background: rgb(10, 23, 34);
+  background: linear-gradient(180deg, #0a1722 30%, #271b29 85%, #5b1d36 105%);
+  border: 2px solid rgb(90, 41, 58);
 }
 
 #root {
-  max-width: 86.5rem;
-  margin: auto;
-  margin-top: 3.125rem; /* TODO: Da ritoccare una volta inserita navbar */
-}
-
-.list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(100% - 6px);
+} /* window */
+
+.patreon {
+  position: absolute;
+  left: 15px;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.header {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+nav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: white;
+  padding: 6px 6px 23px 6px;
+}
+
+.menu {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 9px;
+  background: #c70851;
+  height: 55px;
+  text-wrap: initial;
+}
+
+.control-panel {
+  width: calc(100% - 55px);
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  background: linear-gradient(90deg, #1e3b5a, #0e2640);
+  transition: width 0.5s;
+  padding: 10px;
+  margin-left: 2px;
+  overflow: hidden;
+}
+
+.closed {
+  width: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 30px;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.move-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 6px 6px 84px 6px;
+  flex-direction: column;
+  height: 45rem;
+  flex: 1;
+}
+
+.character-select {
+  display: flex;
+  max-width: 86.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 6px 6px 84px 6px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .move {
   display: flex;
   flex-direction: column;
   min-width: 20rem;
+  width: 100%;
+  max-width: 86.5rem;
 }
 
 .move-details {
   display: flex;
   align-items: center;
   flex-direction: row;
-  background-color: rgb(28, 36, 49);
+  background-color: rgba(28, 36, 49, 50%);
   height: 5.125rem;
   cursor: pointer;
-  padding-right: 1.5625rem;
+  padding-right: 0.75rem;
 }
 
 .move-rating::after,
@@ -85,6 +182,15 @@ body {
   margin-left: -0.25rem;
 }
 
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .move-rating {
   display: flex;
   align-items: center;
@@ -99,7 +205,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 0 1.5625rem;
+  margin-left: 1.1875rem;
   color: rgb(168, 177, 192);
   gap: 0.25rem;
   flex-wrap: nowrap;
@@ -136,8 +242,8 @@ body {
 }
 
 .move-icons {
-  max-width: 10rem;
-  min-width: 10rem;
+  max-width: 5rem;
+  min-width: 5rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -151,12 +257,13 @@ body {
   justify-content: flex-end;
   color: #fff;
   background-color: rgb(128, 5, 52);
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   display: inherit;
   animation: fadeInShow 0.2s;
+  gap: 1rem;
 }
 .move-notes p {
   display: flex;
@@ -183,7 +290,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -195,6 +302,7 @@ body {
   background-color: #00000033;
   padding: 0.25rem 0.5rem;
   flex: 1;
+  outline: 4px solid #00000033;
 }
 
 .frame-data-bits {
@@ -203,6 +311,12 @@ body {
   align-items: center;
   background-color: #00000033;
   padding: 0.25rem 0.5rem;
+}
+
+.character-select img {
+  outline: 3px solid gray;
+  border-radius: 2px;
+  width: 150px;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
@@ -230,6 +344,6 @@ body {
   }
 
   .move-details:hover .move-text {
-    margin-left: -0.25rem;
+    margin-left: 0.9375rem;
   }
 }

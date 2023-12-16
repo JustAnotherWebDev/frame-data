@@ -1,5 +1,3 @@
-import "../components/frame-data.css"
-
 const FrameData = props => {
   const { move, hasDelay } = props
   const forcedStartup = move.forcedStartup || 0
@@ -30,15 +28,7 @@ const FrameData = props => {
   const length =
     forcedStartup +
     startup +
-    Math.max(
-      active + recovery,
-      counterStun,
-      hitStun,
-      blockStun,
-      counterStunHeat,
-      hitStunHeat,
-      blockStunHeat
-    ) +
+    Math.max(active + recovery, hitStun, blockStun) +
     (hasDelay ? delay : 0)
 
   const pForcedStartup = Math.round((forcedStartup * 100) / length)
@@ -98,22 +88,10 @@ const FrameData = props => {
               </div>
             )}
           </div>
-          <div className="on-counter">
-            {empty !== 0 && (
-              <div data-frames={pEmpty} className="cell empty">
-                oC
-              </div>
-            )}
-            {counterStun !== 0 && (
-              <div data-frames={pCounterStun} className="cell stun">
-                {`${counterStun}${move.advantage.isCounterG ? "G" : ""}`}
-              </div>
-            )}
-          </div>
           <div className="on-hit">
             {empty !== 0 && (
               <div data-frames={pEmpty} className="cell empty">
-                oH
+                Hit
               </div>
             )}
             {hitStun !== 0 && (
@@ -125,58 +103,15 @@ const FrameData = props => {
           <div className="on-block">
             {empty !== 0 && (
               <div data-frames={pEmpty} className="cell empty">
-                oB
+                Block
               </div>
             )}
             {blockStun !== 0 && (
-              <div data-frames={pBlockStun} className="cell stun">
+              <div data-frames={pBlockStun} className="cell stun-heat">
                 {blockStun}
               </div>
             )}
           </div>
-          {move.advantageHeat && (
-            <>
-              <div className="on-counter-heat">
-                {empty !== 0 && (
-                  <div data-frames={pEmpty} className="cell empty">
-                    oC (Heat)
-                  </div>
-                )}
-                {counterStunHeat !== 0 && (
-                  <div
-                    data-frames={pCounterStunHeat}
-                    className="cell stun-heat"
-                  >
-                    {counterStunHeat}
-                  </div>
-                )}
-              </div>
-              <div className="on-hit-heat">
-                {empty !== 0 && (
-                  <div data-frames={pEmpty} className="cell empty">
-                    oH (Heat)
-                  </div>
-                )}
-                {hitStunHeat !== 0 && (
-                  <div data-frames={pHitStunHeat} className="cell stun-heat">
-                    {hitStunHeat}
-                  </div>
-                )}
-              </div>
-              <div className="on-block-heat">
-                {empty !== 0 && (
-                  <div data-frames={pEmpty} className="cell empty">
-                    oB (Heat)
-                  </div>
-                )}
-                {blockStunHeat !== 0 && (
-                  <div data-frames={pBlockStunHeat} className="cell stun-heat">
-                    {blockStunHeat}
-                  </div>
-                )}
-              </div>
-            </>
-          )}
         </div>
       </div>
     </>

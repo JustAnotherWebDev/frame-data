@@ -1,27 +1,32 @@
-import { useState } from "react"
-import ControlPanel from "./components/ControlPanel"
-import List from "./components/List"
-import "./components/icons.css"
+import { useEffect, useState } from "react"
+import Navbar from "./components/Navbar"
+import MoveList from "./components/MoveList"
+import CharacterSelect from "./components/CharacterSelect"
 
 function App() {
   const [character, setCharacter] = useState("Bryan")
   const [hasDelay, setDelay] = useState(false)
   const [hasNotation, setNotation] = useState(false)
+
   return (
     <>
-      <ControlPanel
+      <Navbar
+        character={character}
+        setCharacter={setCharacter}
         hasDelay={hasDelay}
         setDelay={setDelay}
         hasNotation={hasNotation}
         setNotation={setNotation}
       />
-      <main className="list">
-        <List
+      {!character ? (
+        <CharacterSelect setCharacter={setCharacter} />
+      ) : (
+        <MoveList
           character={character}
           hasDelay={hasDelay}
           hasNotation={hasNotation}
         />
-      </main>
+      )}
     </>
   )
 }

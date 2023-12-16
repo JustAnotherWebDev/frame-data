@@ -1,6 +1,7 @@
 :root {
   --icon-size-md: 2.1875rem; /* 35px */
-  --icon-size-sm: 0.875rem; /* 14px */
+  --icon-size-sm: 1.6875rem; /* 27px */
+  --icon-size-xs: 0.875rem; /* 14px */
 }
 
 .icon {
@@ -9,6 +10,23 @@
 }
 
 .icon-sm {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.icon-xs {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+}
+
+.logo {
+  content: url("../assets/logo.svg");
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.patreon {
+  content: url("../assets/patreon.svg");
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
 }

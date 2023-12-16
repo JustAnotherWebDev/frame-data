@@ -7,7 +7,7 @@ const Move = props => {
   const [showNotes, setShowNotes] = useState(false)
 
   return (
-    <div className="move">
+    <div id={move.command} className="move">
       <div className="move-details" onClick={() => setShowNotes(!showNotes)}>
         <div className={`move-rating star-${move.rating}`}>{move.rating}</div>
         <div className="move-text">
@@ -33,23 +33,15 @@ const Move = props => {
           <div className="data-container startup-container" title="Startup">
             {move.startup}
           </div>
-          <div className="data-container on-block-container" title="On Block">
-            {move.advantage.onBlock > 0
-              ? "+" + move.advantage.onBlock
-              : move.advantage.onBlock}
-          </div>
-          <div
-            className="data-container on-counter-container"
-            title="On Counter"
-          >
-            {move.advantage.onCounter > 0
-              ? "+" + move.advantage.onCounter
-              : move.advantage.onCounter}
-          </div>
           <div className="data-container on-hit-container" title="On Hit">
             {move.advantage.onHit > 0
               ? "+" + move.advantage.onHit
               : move.advantage.onHit}
+          </div>
+          <div className="data-container on-block-container" title="On Block">
+            {move.advantage.onBlock > 0
+              ? "+" + move.advantage.onBlock
+              : move.advantage.onBlock}
           </div>
         </div>
       </div>
